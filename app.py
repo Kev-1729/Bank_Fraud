@@ -26,18 +26,26 @@ st.title("Predicción de Transacciones con Modelo de Keras")
 st.markdown("""
 ### Ingresar valores de las características:
 Este modelo predice si una transacción es fraudulenta o no basada en las características de la transacción, tales como `scaled_amount`, `scaled_time`, y varias otras características (`V1`, `V2`, ... `V28`).
-Por favor, ingresa los valores para cada una de estas columnas:
+Por favor, ingresa los valores solo para `V2`, `V4`, `V11`, y `V19`. El resto de las características se llenarán con valores aleatorios.
 """)
 
-# Nombres de las columnas
+# Nombres de todas las columnas
 columnas = ['scaled_amount', 'scaled_time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8',
             'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20',
             'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28']
 
-# Crear una fila de entradas numéricas para cada columna
+# Columnas que el usuario ingresa manualmente
+input_columns = ['V2', 'V4', 'V11', 'V19']
+
+# Generar valores aleatorios por defecto para todas las columnas
 input_data = []
 for col in columnas:
-    value = st.number_input(f'Característica {col}', min_value=-10.0, max_value=10.0, value=0.0, step=0.1)
+    if col in input_columns:
+        # Pedir al usuario que ingrese valores solo para V2, V4, V11, y V19
+        value = st.number_input(f'Característica {col}', min_value=-10.0, max_value=10.0, value=0.0, step=0.1)
+    else:
+        # Generar un valor aleatorio para el resto de las columnas
+        value = np.random.uniform(-10.0, 10.0)
     input_data.append(value)
 
 # Botón para realizar la predicción
