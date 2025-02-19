@@ -1,36 +1,38 @@
-# Predicción de Fraude en Transacciones - Aplicación Streamlit
+# Fraud Detection in Transactions - Streamlit Application  
 
-Esta es una aplicación web desarrollada con **Streamlit** que utiliza un modelo de aprendizaje automático entrenado con **TensorFlow/Keras** para predecir si una transacción es fraudulenta o no. El modelo se basa en diversas características de la transacción, como el monto escalado (`scaled_amount`), el tiempo escalado (`scaled_time`), y otros vectores (`V1`, `V2`, ..., `V28`).
+This is a web application developed with **Streamlit** that uses a machine learning model trained with **TensorFlow/Keras** to predict whether a transaction is fraudulent or not. The model is based on various transaction features, such as the scaled amount (`scaled_amount`), scaled time (`scaled_time`), and other vectors (`V1`, `V2`, ..., `V28`).  
 
-## Descripción
+## Description  
 
-La aplicación permite al usuario ingresar manualmente valores para las columnas `V2`, `V4`, `V11`, y `V19`. El resto de las columnas se completan automáticamente con valores aleatorios. Basado en estos datos, el modelo predice si la transacción es fraudulenta.
+The application allows users to manually enter values for the columns `V2`, `V4`, `V11`, and `V19`. The remaining columns are automatically filled with random values. Based on this data, the model predicts whether the transaction is fraudulent.  
 
-### Tecnologías utilizadas:
-- **Streamlit**: Para construir la interfaz web.
-- **TensorFlow/Keras**: Para cargar y utilizar el modelo de predicción.
-- **NumPy**: Para el manejo de arreglos y generación de datos aleatorios.
+### Technologies Used:  
+- **Streamlit**: To build the web interface.  
+- **TensorFlow/Keras**: To load and use the prediction model.  
+- **NumPy**: For handling arrays and generating random data.  
 
-## Capturas de pantalla
+## Screenshots  
 
-_Inserta aquí capturas de pantalla si tienes, para mostrar cómo se ve la aplicación._
+_Insert screenshots here to showcase the application._  
 
-## Estructura del Proyecto
+## Project Structure  
 
 ```plaintext
 ├── models/
-│   └── modelo_keras.h5         # Modelo entrenado de Keras
-├── app.py                      # Código principal de la aplicación Streamlit
-├── requirements.txt            # Dependencias del proyecto
-└── README.md                   # Este archivo
-```
+│   └── modelo_keras.h5         # Trained Keras model  
+├── app.py                      # Main Streamlit application code  
+├── requirements.txt            # Project dependencies  
+└── README.md                   # This file  
+```  
 
-## Instalacion de Requerimientos
+## Install Requirements  
 ```bash
 pip install -r requirements.txt
-```
+```  
 
-## Ejecucion del programa
+## Run the Application  
 ```bash
 streamlit run app.py
-```
+```  
+
+Let me know if you need any modifications! 🚀
